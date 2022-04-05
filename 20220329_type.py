@@ -51,3 +51,5 @@ print(0x10)     #16진수 10 => 16
 print(0xFF)     #16진수 FF => 255
 
 #10진수 -> 2진수
+print(bin(10))  #0b1010
+print(bin(9))   #0b1001
