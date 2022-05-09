@@ -3,7 +3,7 @@ player = ['Faker', 10, True]    #문자, 숫자, 불리안
 print(len(empty_list))  #0
 print(len(player))  #3
 print(type(empty_list), type(player))   #<class 'list'>
-empty_list2 = list()
+empty_list2 = list()    #[]
 print(len(empty_list2)) #0
 message = list('miracle')
 print(message)  #['m', 'i', 'r', 'a', 'c', 'l', 'e']
