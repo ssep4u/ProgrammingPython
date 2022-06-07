@@ -35,8 +35,50 @@ print('-'*20)
 
 #3. N-sum
 number = 331
+n1 = int(number % 1000 / 100)
+n2 = int(number % 100 /10)
+n3 = int(number % 10)
+print(n1+n2+n3)
 #>>7
 number = 523523
+#숫자 한자리씩 빼서 계산하자
+sum_val = 0
+while True: #while number!=0
+    if number == 0:
+        break
+    sum_val += number % 10
+    number = number // 10
+print(sum_val)
+#문자 한자리씩 빼서 계산하자
+number = 523523
+number_s = str(number)  #'523523'
+sum_val2 = 0
+for n in number_s:
+    sum_val2 += int(n)
+print(sum_val2)
+# sum_val3 = 0
+# for index in range(len(number_s)):
+#     sum_val3 += int(number_s[index])
+# print(sum_val3)
+# 나머지 = number % 10   #3
+# number = number // 10   #523523 -> 52352
+# 나머지 = number % 10   #2
+# number = number // 10   #52352 -> 5235
+# 나머지 = number % 10   #5
+# number = number // 10   #5235 -> 523
+# 나머지 = number % 10   #3
+# number = number // 10   #523 -> 52
+# 나머지 = number % 10   #2
+# number = number // 10   #52 -> 5
+# 나머지 = number % 10   #5
+# number = number // 10   #5 -> 0
+#
+# 20
+# 나머지 = number % 10   #0
+# number = number // 10   #2
+# 나머지 = number % 10   #2
+# number = number // 10   #0
+
 #>>20
 
 #4. 369게임(1~100)
