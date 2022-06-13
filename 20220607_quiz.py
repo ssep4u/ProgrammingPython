@@ -80,9 +80,21 @@ print(sum_val2)
 # number = number // 10   #0
 
 #>>20
-
+print('-'*20)
 #4. 369게임(1~100)
 #>>1 2 짝 4 5 짝 ... 짝짝 100
+for number in range(1, 100+1):  #1~100
+    number_s = str(number)
+    #'3', '6', '9' 를 세자 => count
+    count = 0
+    for ch in number_s:
+        if ch == '3' or ch == '6' or ch == '9':
+            count += 1
+
+    if count == 0:  #count == 0: 숫자 출력하자
+        print(number)
+    else:   #count != 0: count만큼 '짝' 출력하자
+        print('짝' * count)
 
 
 
