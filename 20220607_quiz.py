@@ -95,6 +95,13 @@ for number in range(1, 100+1):  #1~100
         print(number)
     else:   #count != 0: count만큼 '짝' 출력하자
         print('짝' * count)
+# gugudan(): 구구단 2단 출력하자
+# gugudan(5): 구구단 5단 출력하자
+def gugudan(dan=2):
+    for n in range(1, 9 + 1):   # 1 <= n <= 9
+        print(f'{dan} x {n} = {dan*n}')
+gugudan(5)
+gugudan()
 
 
 
