@@ -46,6 +46,10 @@ class Game:
         self.title = title
         self.genre = 'MMORPG'
         self.platform = 0
+    def set_genre (self, genre):
+        genres = ['FPS', 'MMORPG', 'Action', 'SPORTS']
+        if genre in genres:
+            self.genre = genre
 
     def run(self):
         print('실행')
