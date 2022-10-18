@@ -1,4 +1,3 @@
-
 #클래스 변수: 객체로 생성하지 않아도 클래스에 하나 존재하는 변수
 #클래스 메소드: 객체로 생성하지 않아도 클래스에 하나 존재하는 메소드
 
@@ -11,6 +10,15 @@ class Student:
 
     def __str__(self):
         return f'학번: {self.student_number}\t이름: {self.name}'
+
+    def __getitem__(self, key):     #객체[key] 재정의
+        if key == '학번':
+            return self.student_number
+        #객체['학년'] 했을 때, return 학년
+        if key == '학년':
+            return self.student_number[0]
+
+
 
 
 # 동아리
@@ -48,6 +56,13 @@ class Club:
     def act(self):  # 동아리 활동 출력하자
         print(self.action)
 
+    def __len__(self):  #동아리 멤버수 리턴하자
+        return len(self.members)
+
+    def __del__(self):      #del 객체 했을 때, 메모리에서 삭제하기 전에 실행
+        print(f'{self.name}은(는) 간다.')
+
+
 
 학생1 = Student("2213", "임채영")
 print(학생1)
@@ -75,3 +90,30 @@ print(동아리2.get_count_club())
 
 #사진반 멤버 수 출력하자
 print(len(동아리1.members))
+
+#특수메소드
+#__init__(self, ...)    생성자, 멤버변수 초기화
+
+#__str__(self)  클래스의 객체를 문자열화 한다.   str(객체)
+# (주로 객체의 속성을 알아볼 수 있도록 정보 표시)
+
+#__len__(self)          len(객체) 재정의
+print('__len__()')
+print(len(동아리1))        #동아리1의 멤버수를 출력하자
+
+#__getitem__(self, key)         객체[key] 재정의
+print('__getitem__()')
+print(학생1)
+print(학생1['학번'])    #print(학생1.student_number)
+print(학생1['학년'])
+
+#__del__(self)      객체를 명시적으로 지울 때 호출되는 메소드
+print('__del__()')
+number = 10
+print(number)
+# del number
+# print(number)
+
+print(동아리1)
+del 동아리1
+print(동아리1)
