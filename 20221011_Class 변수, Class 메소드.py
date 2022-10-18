@@ -24,9 +24,9 @@ class Club:
         return f'만들어진 클래스 수: {cls.count}'
 
     def __init__(self, name):
-        self.name = name
-        self.location = None
-        self.members = []
+        self.name = name    #동아리이름
+        self.location = None    #장소
+        self.members = []   #멤버들
         Club.count += 1  # 클래스변수를 수정
 
     def __str__(self):
