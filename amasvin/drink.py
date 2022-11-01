@@ -42,10 +42,34 @@ class Drink:
         #self.cup_size가 점보(1)일 때, 가격 +500원
         if self.cup_size == 1:
             self.price += 500
+    def set_sugar(self):
+        #옵션 보여주자 1. 30%, 2. 50%, ...
+        for index, sugar_label in enumerate(Drink._SUGARS):
+            print(f'{index + 1}. {sugar_label}')
+        #사용자 입력받자
+        sugar = input('당도를 선택하세요: ')
 
+        if sugar == '': #  그냥 엔터면, 기본값: 1
+            self.sugar = 1
+        else:   #  숫자 입력하면, -1 -> index 바꿔주자
+            self.sugar = int(sugar) - 1
+
+    def set_ice(self):
+        for index, ice_label in enumerate(Drink._ICES):
+            print(f'{index + 1}. {ice_label}')
+        ice = input('얼음량을 선택하세요: ')
+        if ice == '':
+            self.ice = 2
+        else:
+            self.ice = int(ice) - 1
+
+    def order(self):
+        self.set_cup_size()
+        self.set_sugar()
+        self.set_ice()
 
 음료1 = Drink('아메리카노', 1800)
-음료1.set_cup_size()
+음료1.order()
 print(음료1)
 
 
