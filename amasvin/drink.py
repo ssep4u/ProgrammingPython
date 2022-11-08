@@ -68,9 +68,10 @@ class Drink:
         self.set_sugar()
         self.set_ice()
 
-음료1 = Drink('아메리카노', 1800)
-음료1.order()
-print(음료1)
+if __name__ == '__main__':
+    음료1 = Drink('아메리카노', 1800)
+    음료1.order()
+    print(음료1)
 
 
 
