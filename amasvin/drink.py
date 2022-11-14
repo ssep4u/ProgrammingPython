@@ -30,6 +30,7 @@ class Drink:
                f'\t컵사이즈: {Drink._CUP_SIZES[self.cup_size]}' \
                f'\t당도: {Drink._SUGARS[self.sugar]}' \
                f'\t얼음량: {Drink._ICES[self.ice]}'
+
     def set_cup_size(self):
         #사용자에게 숫자를 묻자 1: 레귤러, 2: 점보
         for index, cup_size_label in enumerate(Drink._CUP_SIZES):
@@ -42,6 +43,7 @@ class Drink:
         #self.cup_size가 점보(1)일 때, 가격 +500원
         if self.cup_size == 1:
             self.price += 500
+
     def set_sugar(self):
         #옵션 보여주자 1. 30%, 2. 50%, ...
         for index, sugar_label in enumerate(Drink._SUGARS):
