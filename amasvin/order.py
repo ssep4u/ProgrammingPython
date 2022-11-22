@@ -5,7 +5,7 @@ from bubbletea import Bubbletea
 
 
 class Order:
-    def __init__(self):
+    def __init__(self): #생성자
         self.menu = []  #메뉴판
         self.init_menu()    #메뉴판 초기화
         
@@ -14,8 +14,12 @@ class Order:
     def __str__(self):
         #self.order_menu에서 drink 하나씩 꺼내서 출력하자
         # 총 주문금액 출력하자
+        total_price = 0
+        for drink in self.order_menu:
+            total_price += drink.price
 
-        return '\n'.join(str(drink) for drink in self.order_menu)
+        return '\n'.join(str(drink) for drink in self.order_menu) \
+                +f'\n총 주문금액은 {total_price}원입니다.'
 
     def init_menu(self):    #메뉴판 초기화
         new_menu = Bubbletea("하동녹차오레오", 4500)
@@ -38,11 +42,14 @@ class Order:
             new_drink = copy(self.menu[int(choice) - 1])
                         #메뉴 그대로 가져오면, 옵션에 따라 메뉴가 바뀌어있음
                         #메뉴는 기본으로 놔두고, 복사해와서 그것의 옵션을 바꾸자
-            new_drink.order()
+            new_drink.order()   #음료 주문받자(옵션)
             # print(new_drink)
             #주문한 음료수 리스트에 새로운 음료수 추가하자
             self.order_menu.append(new_drink)
         #주문한 음료수 리스트 출력하자
+        print("-"*80)
+        print("주문하신 음료수는 다음과 같습니다.")
+        print(self) #__str__() 호출
 
     def show_menu(self):
         for index, drink in enumerate(self.menu):
@@ -51,5 +58,5 @@ class Order:
 if __name__ == '__main__':
     order = Order()
     order.order()
-    print(order)
+
 
